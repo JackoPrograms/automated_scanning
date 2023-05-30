@@ -4,7 +4,7 @@ WORKDIR /script
 
 COPY . /script
 
-RUN pip3 install -r requirements.txt
+RUN bash requirements.sh
 
 CMD [ "bash", "script.sh" ]
 
