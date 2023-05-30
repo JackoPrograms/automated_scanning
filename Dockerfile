@@ -6,7 +6,7 @@ COPY . /script
 
 RUN bash requirements.sh
 
-ENTRYPOINT [ "bash", "-s -x -d" ]
+ENTRYPOINT [ "bash", "script.sh -s -x -d" ]
 
 CMD [ "bash", "script.sh" ]
 
