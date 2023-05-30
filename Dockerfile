@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM kalilinux/kali-rolling
 
 WORKDIR /script
 
