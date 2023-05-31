@@ -1,7 +1,5 @@
 FROM kalilinux/kali-rolling
 
-VOLUME /opt/app/data
-
 WORKDIR /script
 
 COPY . /script
@@ -12,4 +10,4 @@ ENTRYPOINT [ "bash", "script.sh" ]
 
 CMD [ "", "", "" ]
 
-VOLUME ./script
+VOLUME . .
