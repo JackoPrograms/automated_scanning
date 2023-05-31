@@ -4,7 +4,7 @@ WORKDIR /script
 
 COPY . .
 
-ADD . /result
+ADD . .
 
 RUN bash requirements.sh
 
