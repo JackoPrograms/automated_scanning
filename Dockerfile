@@ -4,7 +4,7 @@ WORKDIR /script
 
 COPY . /script
 
-VOLUME . .
+VOLUME /automated_scanning
 
 RUN bash requirements.sh
 
