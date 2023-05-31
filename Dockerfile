@@ -4,8 +4,6 @@ WORKDIR /script
 
 COPY . /script
 
-VOLUME . .
-
 RUN bash requirements.sh
 
 ENTRYPOINT [ "bash", "script.sh" ]
