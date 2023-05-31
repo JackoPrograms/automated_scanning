@@ -1,6 +1,6 @@
 FROM kalilinux/kali-rolling
 
-VOLUME . .
+VOLUME /opt/app/data
 
 WORKDIR /script
 
