@@ -2,7 +2,7 @@ FROM kalilinux/kali-rolling
 
 WORKDIR /script
 
-COPY . .
+COPY . /script
 
 RUN bash requirements.sh
 
