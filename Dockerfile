@@ -1,10 +1,10 @@
 FROM kalilinux/kali-rolling
 
+VOLUME . .
+
 WORKDIR /script
 
 COPY . /script
-
-VOLUME .
 
 RUN bash requirements.sh
 
