@@ -2,9 +2,9 @@ FROM kalilinux/kali-rolling
 
 WORKDIR /script
 
-COPY . .
-
 VOLUME . .
+
+COPY . .
 
 RUN bash requirements.sh
 
