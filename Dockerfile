@@ -9,3 +9,4 @@ RUN bash requirements.sh
 ENTRYPOINT [ "bash", "script.sh" ]
 
 CMD [ "", "", "" ]
+
