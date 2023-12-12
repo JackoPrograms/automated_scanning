@@ -5,12 +5,14 @@ echo "Введите домен"
 read domen
 
 # Создаём папку для текущего запуска
+echo "1"
 now=$(date +"%d-%m-%Y_%H-%M-%S")
 r="_"
 name_folder="$now$r$domen"
 mkdir $name_folder
 mkdir $name_folder/inf
 mkdir $name_folder/worker
+echo "2"
 
 
 
@@ -24,12 +26,14 @@ while getopts "x d s" ARG; do
     \?) echo "Something is wrong";;
   esac
 done
+echo "3"
 
 
 
 ###-1 Запускаем amass и сохраняем результат работы в файл: 
 amass enum -d $domen -passive > ./$name_folder/inf/amass_out.txt
 echo "ammas - закончил работу"
+echo "4"
 
 
 
@@ -38,6 +42,7 @@ for line in `cat ./$name_folder/inf/amass_out.txt`
 do 
 	nslookup $line >> ./$name_folder/worker/nslookup_out_ip.txt
 done
+echo "5"
 
 # Удаляем лишнюю информацию и оставляем только ip-адреса
 sed -i '/^Server:/d' ./$name_folder/worker/nslookup_out_ip.txt
@@ -51,12 +56,14 @@ sed -i 's/Address: //' ./$name_folder/worker/nslookup_out_ip.txt
 sed -i '/^127/d' ./$name_folder/worker/nslookup_out_ip.txt
 #sed -i '/^35/d' ./$name_folder/worker/nslookup_out_ip.txt
 #sed -i '/^44.238/d' ./$name_folder/worker/nslookup_out_ip.txt
+echo "6"
 
 # Удаляем все повторяющиеся ip-адреса
 sort -u ./$name_folder/worker/nslookup_out_ip.txt > ./$name_folder/inf/sort_nslookup_out_ip.txt
 
 # Выводим результат работы  nslookup  записанный в файл
 cat ./$name_folder/inf/sort_nslookup_out_ip.txt
+echo "7"
 
 
 
@@ -79,6 +86,7 @@ then
 		fi
 	done
 fi
+echo "8"
 
 for line_ip in `cat ./$name_folder/inf/sort_nslookup_out_ip.txt`
 do 
@@ -127,16 +135,19 @@ do
 	done
 	rm ./$name_folder/worker/nmap_out.txt
 done
+echo "9"
 
 # Удаляем лишние символы из полученых строк
 sed -i 's/ //' ./$name_folder/inf/sort_nmap_out_kopiya_ip_ports.txt
 sed -i 's/ //' ./$name_folder/inf/sort_nmap_out_kopiya_ip_ports.txt
+echo "10"
 
 
 
 ###-4 Зпускаем nuclei на найденых открытых портах для найденых ip-адресов
 nuclei -l ./$name_folder/inf/sort_nmap_out_kopiya_ip_ports.txt -o ./$name_folder/inf/nuclei_out.txt $severity
 
+echo "11"
 
 
 
