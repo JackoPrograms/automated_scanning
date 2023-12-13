@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling
+FROM kalilinux/kali-bleeding-edge
 
 WORKDIR /script
 
