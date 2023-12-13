@@ -31,7 +31,8 @@ echo "3"
 
 
 ###-1 Запускаем amass и сохраняем результат работы в файл: 
-amass enum -d $domen -passive > ./$name_folder/inf/amass_out.txt
+# amass enum -d $domen -passive > ./$name_folder/inf/amass_out.txt
+amass enum -d $domen -passive -o amass_out.txt
 echo "ammas - закончил работу"
 echo "4"
 
