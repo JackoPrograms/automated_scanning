@@ -1,4 +1,4 @@
-FROM kalilinux/kali-last-release
+FROM kalilinux/kali-rolling
 
 WORKDIR /script
 
