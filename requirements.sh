@@ -1,5 +1,6 @@
 apt-get -y update
-apt install amass -y
+# apt install amass -y
+apt install subfinder
 apt install dnsutils -y
 apt-get install nmap -y
 apt install nuclei -y
