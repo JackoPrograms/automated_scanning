@@ -32,14 +32,15 @@ echo "3"
 
 ###-1 Запускаем amass и сохраняем результат работы в файл: 
 # amass enum -d $domen -passive > ./$name_folder/inf/amass_out.txt
-amass enum -d $domen -passive -o amass_out.txt
+# amass enum -d $domen -passive -o amass_out.txt
+subfinder -d $domen -o subfinder_out.txt
 echo "ammas - закончил работу"
 echo "4"
 
 
 
 ###-2 Запускаем поиск ip-адресов по найденым поддоменам
-for line in `cat ./$name_folder/inf/amass_out.txt`
+for line in `cat ./$name_folder/inf/subfinder_out.txt`
 do 
 	nslookup $line >> ./$name_folder/worker/nslookup_out_ip.txt
 done
@@ -77,7 +78,7 @@ then
 		xml_domen="-oX ./$name_folder/worker/nmap_out-domen.xml"
 	fi
 	
-	for line_ip in `cat ./$name_folder/inf/amass_out.txt`
+	for line_ip in `cat ./$name_folder/inf/subfinder_out.txt`
 	do 
 		nmap -oN ./$name_folder/worker/nmap_out-domen.txt $xml_domen $line_ip 
 		cat ./$name_folder/worker/nmap_out-domen.txt >> ./$name_folder/inf/nmap_out-domen_full.txt
