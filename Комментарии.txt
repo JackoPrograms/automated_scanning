@@ -1,0 +1,28 @@
+Ссылка на репозиторий:
+----------------
+https://github.com/JackoPrograms/automated_scanning.git
+
+
+
+# Установка python для использования python3.11.6 (на момент написания практики) кода.
+sudo apt install python3
+
+
+# Инструкция по удалению python
+https://charityfunds.ru/kak-udalit-python-na-linux-kali/
+
+# Утановка Flask
+sudo apt-get install python3-pip
+pip install Flask
+
+
+
+
+# Токен доступа к git-hub репозиторию (используется вместо пароля при авторизации в терминале во время выполнения push)
+JackoPrograms
+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
+
+
+
+# Коментарий
+Добавлена кнопка "start_Windows.bat" и "start_Linux-Mac.sh" запуска программы, которая запускает файл server.py (web-сервер) через перенасной браузер Firefox 

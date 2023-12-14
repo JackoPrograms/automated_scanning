@@ -1,0 +1,791 @@
+<!--  Варинт 6  -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>TargetScanner</title>
+<script src="script.js"></script>
+</head>
+<body>
+<input type="text" id="textInput">
+<input type="checkbox" id="checkbox1">Checkbox 1
+<input type="checkbox" id="checkbox2">Checkbox 2
+<input type="checkbox" id="checkbox3">Checkbox 3
+<button onclick="start()">Start</button>
+</body> -->
+
+
+
+<!-- <html>
+<head>
+    <title>Website</title>
+</head>
+<body>
+    <h1>Website</h1>
+    <form action="/" method="POST">
+        <label for="inputText">Text:</label>
+        <input type="text" id="inputText" name="text"><br><br>
+        <input type="checkbox" id="checkpoint1" name="checkpoint1">
+        <label for="checkpoint1">Checkpoint 1</label><br>
+        <input type="checkbox" id="checkpoint2" name="checkpoint2">
+        <label for="checkpoint2">Checkpoint 2</label><br>
+        <input type="checkbox" id="checkpoint3" name="checkpoint3">
+        <label for="checkpoint3">Checkpoint 3</label><br><br>
+        <input type="submit" value="Start">
+    </form>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>File Creation</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>File Creation</h1>
+    <form>
+        <input type="text" id="text" name="text" placeholder="Enter Text">
+        <br><br>
+        <label for="checkbox1"><input type="checkbox" id="checkbox1" name="checkbox1"> Checkbox 1</label>
+        <br>
+        <label for="checkbox2"><input type="checkbox" id="checkbox2" name="checkbox2"> Checkbox 2</label>
+        <br>
+        <label for="checkbox3"><input type="checkbox" id="checkbox3" name="checkbox3"> Checkbox 3</label>
+        <br><br>
+        <button onclick="saveFile()">Start</button>
+    </form>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h2>Введите текст:</h2>
+        <input type="text" id="text_input">
+        <br><br>
+        <input type="checkbox" id="checkbox1" value="vulnerability1"> Vulnerability 1
+        <br>
+        <input type="checkbox" id="checkbox2" value="vulnerability2"> Vulnerability 2
+        <br>
+        <input type="checkbox" id="checkbox3" value="vulnerability3"> Vulnerability 3
+        <br><br>
+        <button onclick="start()">Старт</button>
+    </body>
+</html> -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+    <form id="form" action="/create_file" method="POST">
+        <input type="text" name="text_input" placeholder="Enter text..."><br>
+        <input type="checkbox" name="checkbox1" value="vul1"> Vulnerability 1<br>
+        <input type="checkbox" name="checkbox2" value="vul2"> Vulnerability 2<br>
+        <input type="checkbox" name="checkbox3" value="vul3"> Vulnerability 3<br>
+        <input type="submit" value="Start">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Create Text File</title>
+</head>
+<body>
+    <form action="/create_files" method="post">
+        <input type="text" name="text" placeholder="Enter text" /><br>
+        <input type="checkbox" name="checkpoint1" value="Checkpoint 1" />Checkpoint 1<br>
+        <input type="checkbox" name="checkpoint2" value="Checkpoint 2" />Checkpoint 2<br>
+        <input type="submit" value="Create Text File" />
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Вариант 4 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script>
+    function createFile() {
+      var text = '33333';
+      var file = new File([text], 'comand.txt', {type: 'text/plain'});
+      var url = URL.createObjectURL(file);
+
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'comand.txt';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- Вариант 7 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script>
+    function createFile() {
+      var userInput = document.getElementById('userInput').value;
+      var text = userInput || '33333';
+      var file = new File([text], 'domin_name.txt', {type: 'text/plain'});
+      var url = URL.createObjectURL(file);
+
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'domin_name.txt';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+<!-- Вариант 8 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script>
+    function createFile() {
+      var userInput = document.getElementById('userInput').value;
+      var text = userInput || '33333';
+
+      var checks = document.getElementsByName("check");
+      var selectedChecks = [];
+      for (var i = 0; i < checks.length; i++) {
+        if (checks[i].checked) {
+          selectedChecks.push(checks[i].value);
+        }
+      }
+
+      var checkString = "";
+      for (var i = 0; i < selectedChecks.length; i++) {
+        if (selectedChecks[i] === "check1") {
+          checkString += "word1";
+        } else if (selectedChecks[i] === "check2") {
+          checkString += "word2";
+        }
+      }
+
+      var fileText = checkString + text;
+
+      var file = new File([fileText], 'vulnerabilities.txt', {type: 'text/plain'});
+      var url = URL.createObjectURL(file);
+
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'vulnerabilities.txt';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <br>
+  <input type="checkbox" name="check" value="check1">check 1
+  <br>
+  <input type="checkbox" name="check" value="check2">check 2
+  <br>
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+<!-- Вариант 10
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script>
+    function createFile() {
+      var userInput = document.getElementById('userInput').value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/create_file', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      var checks = document.getElementsByName("check");
+      var selectedChecks = [];
+      for (var i = 0; i < checks.length; i++) {
+          if (checks[i].checked) {
+          selectedChecks.push(checks[i].value);
+          }
+      }
+
+      var checkString = "";
+      for (var i = 0; i < selectedChecks.length; i++) {
+          if (selectedChecks[i] === "check1") {
+          checkString += "word1";
+          } else if (selectedChecks[i] === "check2") {
+          checkString += "word2";
+          }
+      }
+
+      // Создаём объект для отправки на сервер.
+      var dataToSend = {
+          vuln_text: checkString, // Текст для vulnerabilities.txt
+          user_text: userInput    // Текст пользователя для domain_name.txt
+      };
+
+      // Отправляем данные в формате JSON.
+      xhr.send(JSON.stringify(dataToSend));
+      }
+  </script>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <br>
+  <input type="checkbox" name="check" value="check1">check 1
+  <br>
+  <input type="checkbox" name="check" value="check2">check 2
+  <br>
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Вариант 4 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script>
+    function createFile() {
+      var text = '33333';
+      var file = new File([text], 'comand.txt', {type: 'text/plain'});
+      var url = URL.createObjectURL(file);
+
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'comand.txt';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+<!--  Варинт 6  -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Button Example</title>
+<script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="textInput">
+  <input type="checkbox" id="checkbox1">Checkbox 1
+  <input type="checkbox" id="checkbox2">Checkbox 2
+  <input type="checkbox" id="checkbox3">Checkbox 3
+  <button onclick="start()">Start</button>
+</body> -->
+
+
+
+
+
+<!-- Вариант 1 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Save Text to Files</title>
+</head>
+<body>
+    <h2>Save Text to Files</h2>
+    <label for="text">Enter Text:</label>
+    <input type="text" id="text" placeholder="Enter text here"><br><br>
+    
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Checkpoint 1</label><br>
+    
+    <input type="checkbox" id="checkbox2">
+    <label for="checkbox2">Checkpoint 2</label><br>
+    
+    <input type="checkbox" id="checkbox3">
+    <label for="checkbox3">Checkpoint 3</label><br><br>
+    
+    <button onclick="saveText()">Start</button>
+
+    <script>
+        function saveText() {
+            var text = document.getElementById('text').value;
+            var checkboxes = document.querySelectorAll('input[type=checkbox]');
+            var vulnerabilities = [];
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    var checkpointText = checkboxes[i].nextSibling.textContent;
+                    vulnerabilities.push(checkpointText);
+                }
+            }
+
+            var domainName = "domain_name.txt";
+            var vulnerabilitiesFile = "vulnerabilities.txt";
+
+            var saveDomainName = new Blob([text], {type: 'text/plain'});
+            var saveVulnerabilities = new Blob([vulnerabilities.join("")], {type: 'text/plain'});
+
+            var domainLink = document.createElement('a');
+            domainLink.href = URL.createObjectURL(saveDomainName);
+            domainLink.download = domainName;
+
+            var vulnerabilitiesLink = document.createElement('a');
+            vulnerabilitiesLink.href = URL.createObjectURL(saveVulnerabilities);
+            vulnerabilitiesLink.download = vulnerabilitiesFile;
+
+            domainLink.click();
+            vulnerabilitiesLink.click();
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- Вариант 12 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="inputField" placeholder="Enter text here">
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- Вариант 7   -  Работает, есть поле для ввода текста и текст сохраняется в файл -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script>
+    function createFile() {
+      var userInput = document.getElementById('userInput').value;
+      var text = userInput || '33333';
+      var file = new File([text], 'domin_name.txt', {type: 'text/plain'});
+      var url = URL.createObjectURL(file);
+
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'domin_name.txt';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- Вариант 13   -  Рабочая копия варианта 7. Код js вынесен в отдельный файл.  -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- Вариант 14  -  Записывается информация в 2 файла. Но проблема в том, что записывается информация в оба файла обо всём-->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <br>
+  <input type="checkbox" name="check" value="check1">check 1
+  <br>
+  <input type="checkbox" name="check" value="check2">check 2
+  <br>
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- Вариант 15  -  работает, но есть лишняя запятая в конце файла -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domen_name">
+  <input type="checkbox" id="chek_1"> Point_1
+  <input type="checkbox" id="chek_2"> Point_2
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+<!-- Вариант 16   -  полностью рабочий вариант с двумя чек поинтами и полем ввода текста (домена) -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domen_name">
+  <input type="checkbox" id="chek_1"> Point_1
+  <input type="checkbox" id="chek_2"> Point_2
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+<!-- Вариант 17 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domen_name">
+  <input type="checkbox" id="cve"> cve
+  <input type="checkbox" id="panel"> Panel
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+<!-- Вариант 18  -  Работает. Добавлены все чек поинты тегов уязвимостей -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domen_name">
+  <input type="checkbox" id="cve"> CVE
+  <input type="checkbox" id="panel"> Panel
+  <input type="checkbox" id="wordpress"> Wordpress
+  <input type="checkbox" id="xss"> XSS
+  <input type="checkbox" id="exposure"> Exposure
+  <input type="checkbox" id="wp-plugin"> WP-Plugin
+  <input type="checkbox" id="osint"> OSINT
+  <input type="checkbox" id="tech"> Tech
+  <input type="checkbox" id="lfi"> LFI
+  <input type="checkbox" id="edb"> EDB
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+<!-- Вариант 19  -  Работает. Добавлены все чек поинты тегов уязвимостей -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domen_name">
+  <input type="checkbox" id="cve"> CVE
+  <input type="checkbox" id="panel"> Panel
+  <input type="checkbox" id="wordpress"> Wordpress
+  <input type="checkbox" id="xss"> XSS
+  <input type="checkbox" id="exposure"> Exposure
+  <input type="checkbox" id="wp-plugin"> WP-Plugin
+  <input type="checkbox" id="osint"> OSINT
+  <input type="checkbox" id="tech"> Tech
+  <input type="checkbox" id="lfi"> LFI
+  <input type="checkbox" id="edb"> EDB
+  <input type="checkbox" id="info"> Info
+  <input type="checkbox" id="high"> High
+  <input type="checkbox" id="medium"> Medium
+  <input type="checkbox" id="critical"> Critical
+  <input type="checkbox" id="low"> Low
+  <input type="checkbox" id="unknown"> Unknown
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- Вариант 20  -  работает сохранение чек поинтов по двум файлам -->
+<!-- 
+  Есть баги:
+  - Запятая в конце второго файла при НЕ выборе последнего чек поинта
+  - Присутствует визуализация процесса сохранения файла
+  - при повторном нажатии на кнопку "Create Text File" происходит открытие файла с доменом
+  - При НЕ выборе всех чек поинтов и оставлении поля ля ввода домена пустым, в файлы "domin_name.txt" и "severity_vulnerabilities.txt" записывается "333333"
+ -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domen_name">
+  <input type="checkbox" id="cve"> CVE
+  <input type="checkbox" id="panel"> Panel
+  <input type="checkbox" id="wordpress"> Wordpress
+  <input type="checkbox" id="xss"> XSS
+  <input type="checkbox" id="exposure"> Exposure
+  <input type="checkbox" id="wp-plugin"> WP-Plugin
+  <input type="checkbox" id="osint"> OSINT
+  <input type="checkbox" id="tech"> Tech
+  <input type="checkbox" id="lfi"> LFI
+  <input type="checkbox" id="edb"> EDB -->
+  <!-- Добавлены новые чекбоксы -->
+  <!-- <input type="checkbox" id="info"> Info
+  <input type="checkbox" id="high"> High
+  <button onclick="createFile()">Create Text File</button>
+</body>
+</html> -->
+
+
+
+
+<!-- Вариант 21   -  Работает, исправлен баг с Запятой и текстом 33333 -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domain_name">
+  <input type="checkbox" id="cve"> CVE
+  <input type="checkbox" id="panel"> Panel
+  <input type="checkbox" id="wordpress"> Wordpress
+  <input type="checkbox" id="xss"> XSS
+  <input type="checkbox" id="exposure"> Exposure
+  <input type="checkbox" id="wp-plugin"> WP-Plugin
+  <input type="checkbox" id="osint"> OSINT
+  <input type="checkbox" id="tech"> Tech
+  <input type="checkbox" id="lfi"> LFI
+  <input type="checkbox" id="edb"> EDB
+  <input type="checkbox" id="info"> Info
+  <input type="checkbox" id="high"> High
+  <button onclick="sendDomainName()">Send Domain Name</button>
+  <button onclick="sendVulnerabilityTags()">Send Vulnerability Tags</button>
+  <button onclick="sendSeverity()">Send Severity</button>
+</body>
+</html> -->
+
+
+
+
+<!-- Вариант 22 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <input type="text" id="domain_name">
+  <input type="checkbox" id="cve"> CVE
+  <input type="checkbox" id="panel"> Panel
+  <input type="checkbox" id="wordpress"> Wordpress
+  <input type="checkbox" id="xss"> XSS
+  <input type="checkbox" id="exposure"> Exposure
+  <input type="checkbox" id="wp-plugin"> WP-Plugin
+  <input type="checkbox" id="osint"> OSINT
+  <input type="checkbox" id="tech"> Tech
+  <input type="checkbox" id="lfi"> LFI
+  <input type="checkbox" id="edb"> EDB
+  <input type="checkbox" id="info"> Info
+  <input type="checkbox" id="high"> High
+  <button onclick="sendAll()">Send All</button>
+</body>
+</html>
