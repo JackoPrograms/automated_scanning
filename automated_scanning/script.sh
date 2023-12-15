@@ -2,7 +2,7 @@
 
 # Cчитываем имя домена из терминала
 echo "Введите домен"
-domen=`cat ../domain_name.txt`
+domen=`cat domain_name.txt`
 
 # Создаём папку для текущего запуска
 now=$(date +"%d-%m-%Y_%H-%M-%S")
