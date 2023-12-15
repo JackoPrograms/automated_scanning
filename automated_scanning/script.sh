@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Cчитываем имя домена из терминала
-echo "Введите домен"
+# echo "Введите домен"
 domen=`cat domain_name.txt`
 
 # Создаём папку для текущего запуска
@@ -15,13 +15,17 @@ mkdir $name_folder/worker
 
 
 ###-1 Добавляем необходимые флаги
-severity_flags=`cat severity_vulnerabilities.txt`
+severity_and_tags_flag="-tags "
+severity_and_tags_flag+=`cat tags_vulnerabilities.txt`
+severity_and_tags_flag+=" -severity "
+severity_and_tags_flag+=`cat severity_vulnerabilities.txt`
+
 
 while getopts "x d s" ARG; do
   case "$ARG" in 
     x) xml="Yes";; # Флаг nmap - для сохранения вывода nmap в xml файле
     d) dom="Yes";; # Флаг nmap - для сканирования поддоменов
-    s) severity="-severity";; # Флаг nuclei - указывающий на серьёзность цели сканирования -severity
+    s) severity_and_tags=severity_and_tags_flag;; # Флаг nuclei - указывающий на серьёзность цели сканирования -severity и используемые -tags
     :​) echo "argument missing";;
     \?) echo "Something is wrong";;
   esac
@@ -34,7 +38,7 @@ done
 # amass enum -d $domen -passive -o amass_out.txt
 # subfinder -d $domen -o subfinder_out.txt
 subfinder -d $domen > ./$name_folder/inf/subfinder_out.txt
-echo "ammas - закончил работу"
+echo "subfinder - закончил работу"
 
 
 
@@ -140,7 +144,7 @@ sed -i 's/ //' ./$name_folder/inf/sort_nmap_out_kopiya_ip_ports.txt
 
 
 ###-4 Зпускаем nuclei на найденых открытых портах для найденых ip-адресов
-nuclei -l ./$name_folder/inf/sort_nmap_out_kopiya_ip_ports.txt -o ./$name_folder/inf/nuclei_out.txt $severity
+nuclei -l ./$name_folder/inf/sort_nmap_out_kopiya_ip_ports.txt -o ./$name_folder/inf/nuclei_out.txt $severity_and_tags
 
 
 
